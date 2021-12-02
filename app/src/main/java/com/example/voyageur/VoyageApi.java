@@ -17,11 +17,12 @@ public class VoyageApi {
 
 
         @GET("weather")
-        Call<com.example.voyageur.modelweather.Root> getWeather(@Query("q") String q);
+        //J'ai mis deux query car il ya 2 parametre a envoyer a la requete le nom de la ville et la clef
+        Call<com.example.voyageur.modelweather.Root> getWeather(@Query("q") String q ,@Query("appid") String appid);
     }
 
     private final static String BASE_URL="http://data.fixer.io/api/";
-    private final static String BASE_URL_TWO="https://api.openweathermap.org/";
+    private final static String BASE_URL_TWO="https://api.openweathermap.org/data/2.5/";
 
     private static VoyageApi INSTANCE = null;
     private VoyageApi(){}

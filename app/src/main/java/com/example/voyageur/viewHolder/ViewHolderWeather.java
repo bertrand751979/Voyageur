@@ -1,4 +1,4 @@
-package com.example.voyageur;
+package com.example.voyageur.viewHolder;
 
 import android.view.View;
 import android.widget.ImageView;
@@ -8,6 +8,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.voyageur.R;
+import com.example.voyageur.modelweather.Main;
 import com.example.voyageur.modelweather.Root;
 import com.example.voyageur.modelweather.Weather;
 
@@ -57,12 +59,13 @@ public class ViewHolderWeather extends RecyclerView.ViewHolder {
         this.txtDescription = txtDescription;
     }
 
-    public void bind(Root root ){
-     txtId.setText(root.getWeather().get(0).getId());
-     txtMain.setText(root.getWeather().get(0).getMain());
-     txtDescription.setText(root.getWeather().get(0).getDescription());
+    public void bind(Weather weather){
+        String url="http://openweathermap.org/img/w/" + weather.getIcon() + ".png";
+     txtId.setText(String.valueOf(weather.getId()));
+     txtMain.setText(weather.getMain());
+     txtDescription.setText(weather.getDescription());
             Glide.with(txtIcone.getContext())
-                    .load(root.getWeather().get(0).getIcon())
+                    .load(url)
                     .into(txtIcone);
     }
 }

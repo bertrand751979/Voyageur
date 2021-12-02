@@ -1,4 +1,4 @@
-package com.example.voyageur;
+package com.example.voyageur.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.voyageur.R;
 import com.example.voyageur.fragment.FragmentConvert;
 import com.example.voyageur.fragment.FragmentTranslate;
 import com.example.voyageur.fragment.FragmentWeather;
@@ -14,7 +15,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNav;
-    public static String EXTRA_KEY ="ExtraKey";
+    public static String WEATHER_LIST_KEY ="WeatherListKey";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -44,19 +44,19 @@ public class SharedPreferencesManager {
             sharedPreferences.edit().putString(key, value).apply();
         }
 
-        public void saveWeather(ArrayList<Root> books, String listKey) {
+        public void saveWeather(ArrayList<Weather> books, String listKey) {
             Gson gson = new Gson();
             //gson.tojson qui transforme la liste en chaine de caractere
             String booksAsString = gson.toJson(books);
             save(listKey,booksAsString);
         }
 
-        public List<Root> getWeather(String listKey){
-            List<Root> booksList = new ArrayList<>();
+        public List<Weather> getWeather(String listKey){
+            List<Weather> booksList = new ArrayList<>();
             Gson gson = new Gson();
-            Root[] books = gson.fromJson(get(listKey), Root[].class);
+            Weather[] books = gson.fromJson(get(listKey), Weather[].class);
             if (books != null){
-                booksList = Arrays.asList(gson.fromJson(get(listKey), Root[].class));
+                booksList = Arrays.asList(gson.fromJson(get(listKey), Weather[].class));
             }
             return  booksList;
         }

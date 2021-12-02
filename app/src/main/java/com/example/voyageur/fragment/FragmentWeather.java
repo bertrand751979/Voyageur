@@ -1,6 +1,6 @@
 package com.example.voyageur.fragment;
 
-import static com.example.voyageur.MainActivity.EXTRA_KEY;
+import static com.example.voyageur.activities.MainActivity.WEATHER_LIST_KEY;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,9 +13,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import com.example.voyageur.MapWeatherActivity;
+
+import com.example.voyageur.activities.MapWeatherActivity;
 import com.example.voyageur.R;
 import com.example.voyageur.SharedPreferencesManager;
 import com.example.voyageur.VoyageApi;
@@ -53,9 +52,8 @@ public class FragmentWeather extends Fragment {
             @Override
             public void onClick(View view) {
                 callService();
-                Intent intent = new Intent(FragmentWeather.this.getContext(), MapWeatherActivity.class);
-                //intent.putExtra(EXTRA_KEY,weather);
-                startActivity(intent);
+
+
                 Toast.makeText(FragmentWeather.this.getContext(), "Vers descriptif", Toast.LENGTH_SHORT).show();
             }
         });
@@ -64,7 +62,7 @@ public class FragmentWeather extends Fragment {
     public void callService(){
         String key = "5b2327f8b0cd51950136ddb878f8a45d";
         VoyageApi.VoyageService service = VoyageApi.getInstance().getClientTwo().create(VoyageApi.VoyageService.class);
-        Call<com.example.voyageur.modelweather.Root> call= service.getWeather(key);
+        Call<com.example.voyageur.modelweather.Root> call= service.getWeather(editCity.getText().toString(),key);
         call.enqueue(new Callback<com.example.voyageur.modelweather.Root>() {
             @Override
             public void onResponse(Call<com.example.voyageur.modelweather.Root> call, Response<com.example.voyageur.modelweather.Root> response) {
@@ -80,19 +78,15 @@ public class FragmentWeather extends Fragment {
 
     private void updateView(Response<Root> response) {
             if(response.body()!=null){
-                //listWeather= (ArrayList<Root>)response.body();
-                //myListBeer = (ArrayList<Root>) response.body();
-
-                //SharedPreferencesManager.getInstance(this.getContext()).saveWeather(listWeather,EXTRA_KEY);
+                listWeather = (ArrayList<Weather>)response.body().getWeather();
+                SharedPreferencesManager.getInstance(this.getContext()).saveWeather(listWeather,WEATHER_LIST_KEY);
+                Intent intent =new Intent(FragmentWeather.this.getContext(),MapWeatherActivity.class);
+                startActivity(intent);
             Log.d( "Reponse du serveur", String.valueOf(listWeather.size()));
         }
     }
 
-    /*private void isRegister() {
-            if (editCity.getText().toString().equalsIgnoreCase(root.getName())){
-                setViewItem();
-            }
-        }*/
+
 
 
 

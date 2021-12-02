@@ -1,4 +1,4 @@
-package com.example.voyageur.modelweather;
+package com.example.voyageur.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,18 +8,19 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.voyageur.R;
-import com.example.voyageur.ViewHolderWeather;
+import com.example.voyageur.modelweather.Weather;
+import com.example.voyageur.viewHolder.ViewHolderWeather;
 
 import java.util.ArrayList;
 
 public class AdapterViewHolder extends RecyclerView.Adapter<ViewHolderWeather> {
-    private ArrayList<Root>listAdapter;
+    private ArrayList<Weather>listAdapter;
 
-    public AdapterViewHolder(ArrayList<Root> listAdapter) {
+    public AdapterViewHolder(ArrayList<Weather> listAdapter) {
         this.listAdapter = listAdapter;
     }
 
-    public void setListAdapter(ArrayList<Root> listAdapter) {
+    public void setListAdapter(ArrayList<Weather> listAdapter) {
         this.listAdapter = listAdapter;
     }
 
