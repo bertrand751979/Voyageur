@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:strokeWidth="2sp"
+        android:layout_margin="10dp"
+        app:strokeColor="@color/black">
+
+        <TextView
+            android:id="@+id/raw_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="id"
+            android:textStyle="bold"
+            android:textSize="16sp"/>
+
+        <ImageView
+            android:id="@+id/raw_icon"
+            android:layout_marginTop="20dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@color/black"/>
+
+        <TextView
+            android:id="@+id/raw_main"
+            android:layout_marginTop="90dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Main"
+            android:textSize="22sp"
+            android:textColor="@color/purple_200"/>
+
+        <TextView
+            android:id="@+id/raw_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="130dp"
+            android:textSize="14sp"
+            android:text="Description"
+            android:textStyle="italic"
+            android:textColor="@color/purple_700"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+</LinearLayout>

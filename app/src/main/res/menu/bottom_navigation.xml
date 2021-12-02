@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+    android:id="@+id/nav_convert"
+    android:title="Convertiseur Devise"
+    android:icon="@drawable/ic_money">
+    </item>
+    <item
+        android:id="@+id/nav_weather"
+        android:title="Météo"
+        android:icon="@drawable/ic_weather">
+    </item>
+    <item
+        android:id="@+id/nav_traslate"
+        android:title="Traducteur"
+        android:icon="@drawable/ic_translate">
+    </item>
+
+</menu>

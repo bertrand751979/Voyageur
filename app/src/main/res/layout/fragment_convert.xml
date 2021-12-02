@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CONVERTISSEUR DEVISE"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:textColor="#8C0A0A"
+        android:textAlignment="center"
+        android:layout_margin="30dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+       <EditText
+           android:id="@+id/raw_amountToConvert"
+           android:layout_width="wrap_content"
+           android:layout_marginLeft="10dp"
+           android:textSize="20sp"
+           android:layout_height="wrap_content"
+           android:hint="Montant"/>
+
+        <TextView
+            android:layout_width="20sp"
+            android:layout_height="20sp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:text="X"/>
+
+        <TextView
+            android:id="@+id/txt_usd"
+            android:layout_width="40sp"
+            android:layout_height="20sp"
+            android:textColor="#F40505"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:text="USD"/>
+
+        <TextView
+            android:layout_width="18dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginLeft="15dp"
+            android:text="="/>
+
+        <TextView
+            android:id="@+id/txt_amountConverted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:text="Montant "/>
+
+        <TextView
+            android:layout_width="20sp"
+            android:layout_height="20sp"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_money"/>
+    </LinearLayout>
+    <Button
+        android:id="@+id/btnDisplayRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_gravity="center"
+        android:text="Display Rate"/>
+        <Button
+            android:id="@+id/btnCalculate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_gravity="center"
+            android:text="Calculez"/>
+
+
+
+</LinearLayout>
