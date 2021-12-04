@@ -50,9 +50,6 @@
             android:text="Description"
             android:textStyle="italic"
             android:textColor="@color/purple_700"/>
-
-
-
     </com.google.android.material.card.MaterialCardView>
 
 

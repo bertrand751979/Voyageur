@@ -16,6 +16,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNav;
     public static String WEATHER_LIST_KEY ="WeatherListKey";
+    public static String TEMPERATURE_MIN_KEY="tempMinKey";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
